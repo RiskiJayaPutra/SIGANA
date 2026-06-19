@@ -1,5 +1,5 @@
 // Filter logic for updating map layers
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://sigana-production.up.railway.app/api';
 
 async function fetchGeoJSON(endpoint, params = {}) {
     const url = new URL(`${API_BASE_URL}/${endpoint}`);
