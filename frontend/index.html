@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGANA - Sistem Informasi Geografis Analisis Bencana Jakarta</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="map-page">
+    <header>
+        <h1>SIGANA</h1>
+        <nav>
+            <a href="index.html" class="active">Peta Bencana</a>
+            <a href="dashboard.html">Dashboard Statistik</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Map element takes the whole container (fullscreen) -->
+        <main id="map"></main>
+
+        <!-- Floating Sidebar -->
+        <aside class="sidebar">
+            <h2>Filter Data</h2>
+            
+            <div class="filter-group">
+                <label for="filter-kota">Kota Administrasi</label>
+                <select id="filter-kota">
+                    <option value="">Semua Kota</option>
+                    <option value="Jakarta Pusat">Jakarta Pusat</option>
+                    <option value="Jakarta Utara">Jakarta Utara</option>
+                    <option value="Jakarta Barat">Jakarta Barat</option>
+                    <option value="Jakarta Selatan">Jakarta Selatan</option>
+                    <option value="Jakarta Timur">Jakarta Timur</option>
+                    <option value="Kepulauan Seribu">Kepulauan Seribu</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="filter-risiko">Tingkat Risiko Banjir</label>
+                <select id="filter-risiko">
+                    <option value="">Semua Risiko</option>
+                    <option value="Tinggi">Tinggi</option>
+                    <option value="Sedang">Sedang</option>
+                    <option value="Rendah">Rendah</option>
+                </select>
+            </div>
+
+            <h2>Layer Peta</h2>
+            <div class="filter-group">
+                <div class="layer-toggle">
+                    <label for="layer-banjir">Zona Rawan Banjir</label>
+                    <label class="switch">
+                        <input type="checkbox" id="layer-banjir" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="layer-toggle">
+                    <label for="layer-tsunami">Zona Rawan Tsunami</label>
+                    <label class="switch">
+                        <input type="checkbox" id="layer-tsunami">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="layer-toggle">
+                    <label for="layer-pengungsian">Titik Pengungsian</label>
+                    <label class="switch">
+                        <input type="checkbox" id="layer-pengungsian">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/legend.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>
